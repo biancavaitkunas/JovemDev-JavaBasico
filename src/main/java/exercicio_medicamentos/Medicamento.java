@@ -17,12 +17,5 @@ public class Medicamento {
 	List <String> contraindicacoes = new ArrayList<String>();
 	List <String> indicacoes = new ArrayList<String>();
 	
-	@Override
-	public String toString() {
-		return "Medicamento: " + nome + 
-				"\nAdministração: " + adm + 
-				"\nContraindicacoes=" + contraindicacoes + 
-				"\nIndicacões: " + indicacoes + "\n\n";
-	}
 
 }

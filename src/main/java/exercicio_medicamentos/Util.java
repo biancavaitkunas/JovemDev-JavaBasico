@@ -41,11 +41,8 @@ public class Util {
 			if (pessoaEscolhida.sintoma.equals(indicacao.indicacoes)) {
 				prescricao = new Prescricao(pessoaEscolhida, listAllMedicamentos);
 			}
-			
 		}
-		
 		return prescricao;
-		
 	}
 	
 	public boolean verificaAlergia(Prescricao prescreve) {
