@@ -36,8 +36,8 @@ public class Aula {
 		return disciplinas.contains(d);
 	}
 	
-	public A cadNotaDisciplina(Aluno a, Disciplina d) {
+	/*public A cadNotaDisciplina(Aluno a, Disciplina d) {
 		a.addDisciplina(d.addNotas(0, 0, 0));
-	}
+	}*/
 
 }
