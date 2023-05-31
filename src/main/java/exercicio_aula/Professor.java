@@ -9,6 +9,6 @@ import lombok.Getter;
 public class Professor {
 	
 	private String nome;
-	private FormacaoProfessor formacacao;
-
+	private Formacao formacao;
+	
 }

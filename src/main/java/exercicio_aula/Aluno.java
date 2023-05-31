@@ -10,12 +10,15 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 
+
 public class Aluno {
 	
 	private String nome;
-	List <Disciplina> disciplinasAluno = new ArrayList<Disciplina>();
-	List <Integer> notas = new ArrayList<Integer>();
+	private List <Disciplina> disciplinasAluno = new ArrayList<Disciplina>();
 	
-	
+	public void addDisciplina(Disciplina d) {
+		disciplinasAluno.add(d);
+	}
+
 
 }
