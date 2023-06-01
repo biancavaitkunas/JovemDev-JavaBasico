@@ -100,8 +100,10 @@ public class UtilTest {
 	@DisplayName("Teste verificação alergia")
 	
 	void testeVerificaAlergia() {
-		
-		
+		List <Medicamento> cadsMedicamentos = util.listAllMedicamentos();
+		Prescricao prescricao = util.prescreve("Maria", cadsMedicamentos);
+		assertEquals(cadsMedicamentos.get(1), prescricao.medicamentos.get(1));
+		util.verificaAlergia(prescricao);
 		
 	}
 

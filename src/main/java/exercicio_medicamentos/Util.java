@@ -10,7 +10,6 @@ public class Util {
 	private List<Medicamento> medicamentos = new ArrayList<Medicamento>();
 
 	public Pessoa add(Pessoa p) {
-
 		pessoa.add(p);
 		return p;
 

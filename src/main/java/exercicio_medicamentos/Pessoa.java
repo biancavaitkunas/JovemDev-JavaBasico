@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 
 public class Pessoa {
 	
@@ -17,10 +16,7 @@ public class Pessoa {
 	List <String> sintoma = new ArrayList <String> ();
 	List <String> alergias = new ArrayList <String> ();
 	
-	@Override
-	public String toString() {
-		return "Pessoa [nome=" + nome + ", sintomas=" + sintoma + ", alergias=" + alergias + "]";
-	}
+	
 	
 	
 

@@ -1,18 +1,16 @@
-package exercicio_aula;
+package exercicio_escola;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Aula {
+public class Escola {
 	
 	private List<Disciplina>disciplinas = new ArrayList<Disciplina>();
 	private List<Aluno>alunos = new ArrayList<Aluno>();
 	private List<Professor>professores = new ArrayList<Professor>();
 	
 	public Aluno cadAluno(Aluno a) {
-		
-		a.addDisciplina(null);
 		alunos.add(a);
 		return a;
 		
@@ -35,9 +33,6 @@ public class Aula {
 	public boolean existeDisciplina (Disciplina d) {
 		return disciplinas.contains(d);
 	}
-	
-	/*public A cadNotaDisciplina(Aluno a, Disciplina d) {
-		a.addDisciplina(d.addNotas(0, 0, 0));
-	}*/
+
 
 }

@@ -1,4 +1,4 @@
-package exercicio_aula;
+package exercicio_escola;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
