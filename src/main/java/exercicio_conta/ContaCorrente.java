@@ -2,11 +2,15 @@ package exercicio_conta;
 
 public class ContaCorrente extends Conta{
 	
+	public ContaCorrente(int numero, int agencia, String nome, double saldo) {
+		super(numero, agencia, nome, saldo);
+	}
+	
 	@Override
 	public void sacar(double valorSaque) {
-		if (saldo <= valorSaque) {
-			super.sacar(valorSaque);
-		}
+		if (valorSaque > this.saldo) {
+			this.saldo = saldo;
+		} 
 	}
 	
 	@Override
@@ -15,4 +19,5 @@ public class ContaCorrente extends Conta{
 			super.transferencia(beneficiada, valorTransferencia);
 		}
 	}
+
 }

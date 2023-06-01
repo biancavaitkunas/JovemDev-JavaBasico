@@ -1,13 +1,13 @@
 package exercicio_conta;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Getter
+@Getter 
 @AllArgsConstructor
 @NoArgsConstructor
-
 
 public class Conta {
 	
@@ -25,8 +25,8 @@ public class Conta {
 	}
 	
 	public void transferencia(Conta beneficiada, double valorTransferencia) {
-		if (saldo >= valorTransferencia) {
-			saldo -= valorTransferencia;
+		if (this.saldo >= valorTransferencia) {
+			this.saldo -= valorTransferencia;
 			beneficiada.saldo += valorTransferencia;
 		}
 	}
