@@ -7,11 +7,11 @@ public class Perfumaria extends Produto{
 	}
 	
 	@Override
-	public void venda(Cliente c, Produto p, int qtd) {
-		if (!c.isMaior() && p.podeVender()) {
-			super.venda(c, p, qtd);
+	public boolean venda(Cliente c, int qtd) {
+		if (c.saldoDevedor < 300 && podeVender(qtd)) {
+			super.venda(c, qtd);
 		}
-		
-	}
+		return false;
+	} 
 
 }

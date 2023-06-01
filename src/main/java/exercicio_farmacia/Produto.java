@@ -6,9 +6,9 @@ import lombok.Getter;
 
 public class Produto {
 	
-	protected String nome;
+	private String nome;
 	protected int estoque;
-	protected double valor;
+	private double valor;
 	
 	public Produto(String nome, int estoque, double valor) {
 		this.nome = nome;
@@ -16,18 +16,17 @@ public class Produto {
 		this.valor = valor;
 	}
 	
-	public boolean temEstoque () {
-		return estoque > 0;
-	}
-	
-	public void venda(Cliente c, Produto p, int qtd) {
-		p.estoque = p.getEstoque() - qtd;
-		c.saldoDevedor = c.getSaldoDevedor() + p.getValor()*qtd;
+	public boolean venda(Cliente c, int qtd) {
+		estoque = getEstoque() - qtd;
+		c.saldoDevedor = c.saldoDevedor + getValor()*qtd;
+		return true;
 		
 	}
 	
-	public boolean podeVender() {
-		return temEstoque();
+	public boolean podeVender(int qtd) {
+		if (estoque > qtd) {
+			return true;
+		}
+		return false;
 	}
-
 }

@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 
 public class Conta {
 	
-	protected int numero;
-	protected int agencia;
+	private int numero;
+	private int agencia;
 	protected String nome;
 	protected double saldo;
 	
@@ -28,8 +28,11 @@ public class Conta {
 		if (this.saldo >= valorTransferencia) {
 			this.saldo -= valorTransferencia;
 			beneficiada.saldo += valorTransferencia;
-		}
+		} 
 	}
 	
+	//correção
+	// fazer saldo e deposito como boolean
+	//transferencia não pode ser sobrescrita nas classes filhas
 
 }

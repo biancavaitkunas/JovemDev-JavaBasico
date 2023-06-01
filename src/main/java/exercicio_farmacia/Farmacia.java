@@ -5,7 +5,7 @@ import java.util.List;
 
 import lombok.Getter;
 
-@Getter
+@Getter 
 
 public class Farmacia {
 	
@@ -21,6 +21,31 @@ public class Farmacia {
 	public Cliente cadClientes (Cliente c) {
 		clientes.add(c);
 		return c;
+	}
+	
+	public boolean vender(Cliente c, Produto p, int qtd) {
+		return p.venda(c, qtd);
+	}
+	
+	public int produtosEstoque() {
+		int pEstoque = 0;
+		for (Produto produto : produtos) {
+			if (produto.getEstoque() > 0) {
+				pEstoque ++;
+			}
+		}
+		return pEstoque;
+		
+	}
+	
+	public int clientesInadimplentes() {
+		int cInadimplentes = 0;
+		for (Cliente cliente : clientes) {
+			if (cliente.saldoDevedor > 0) {
+				cInadimplentes++;
+			}
+		}
+		return cInadimplentes;
 	}
 	
 

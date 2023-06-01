@@ -25,7 +25,7 @@ public class ContaUniversitaria extends Conta{
 		saldo = beneficiada.saldo;
 		if (saldo + valorTransferencia > 2000) {
 			saldo = beneficiada.saldo -= valorTransferencia;
-		}
+		} 
 	}
 	
 	@Override
@@ -37,13 +37,5 @@ public class ContaUniversitaria extends Conta{
 		}
 		
 	}
-	
-	/*@Override
-	public void depositar(double valorDeposito) {
-		if (this.saldo + valorDeposito > 2000) {
-			this.saldo = saldo;
-		}
-		
-	}*/
 
 }

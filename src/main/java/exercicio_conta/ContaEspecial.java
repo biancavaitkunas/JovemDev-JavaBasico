@@ -1,19 +1,16 @@
 package exercicio_conta;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Setter
 @Getter
-@NoArgsConstructor
 
 public class ContaEspecial extends Conta{
 	
 	private double limite;
 	
-	public ContaEspecial(int numero, int agencia, String nome, double saldo) {
+	public ContaEspecial(int numero, int agencia, String nome, double saldo, double limite) {
 		super(numero, agencia, nome, saldo);
+		this.limite = limite;
 	}
 
 	

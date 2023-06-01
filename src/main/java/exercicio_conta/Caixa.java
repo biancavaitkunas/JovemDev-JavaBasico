@@ -9,7 +9,7 @@ public class Caixa {
 	private Conta conta;
 	
 	public void deposito(Conta c, double valor) {
-		c.depositar(valor);
+		c.depositar(valor); 
 	}
 	
 	public void saque(Conta c, double valor) {

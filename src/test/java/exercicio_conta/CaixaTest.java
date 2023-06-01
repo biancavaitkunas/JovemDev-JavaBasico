@@ -20,9 +20,7 @@ public class CaixaTest {
 		contas.clear();
 		contas.add(new ContaCorrente(1234, 100, "Pessoa 1", 500));
 		contas.add(new ContaUniversitaria(4567, 100, "Pessoa 2", 1000));
-		ContaEspecial cEspecial = new ContaEspecial(8912, 200, "Pessoa 3", 3000);
-		cEspecial.setLimite(1000);
-		contas.add(cEspecial);	
+		contas.add(new ContaEspecial(8912, 200, "Pessoa 3", 3000, 500));	
 		
 	}
 	
