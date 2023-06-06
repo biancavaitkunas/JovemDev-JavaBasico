@@ -107,5 +107,5 @@ public class FarmaciaTest {
 		farmacia.clientesInadimplentes();
 		assertEquals(2, farmacia.clientesInadimplentes());
 	}
-
+	
 }
