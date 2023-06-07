@@ -165,3 +165,27 @@ inner join cidade on cidade.id = candidato.cidade
 inner join voto on voto.voto = (select max (voto)from voto)
 and voto.voto = (select max(voto) from voto)
 inner join cargo on cargo.id = candidato.cargo and cargo.nome = 'Prefeito';
+
+select incrementar (10);
+
+select cidade.nome, incrementar(cidade.qt_vereadores)
+from cidade order by nome;
+
+select quantidade() from cargo;
+
+select buscaCandidatos('TUBARÃO', 'Prefeito');
+
+create or replace function buscaCandidatos2(candidato character varying, cargo character varying)
+returns table (numero int, nome varchar) as
+$$
+begin
+	return query select candidato.* from candidato
+		inner join cidade on cidade.id = candidato.cidade and cidade.nome = $1
+		inner join cargo on cargo.id = candidato.cargo and cargo.nome = $2
+		order by candidato.nome;
+	return;
+end
+$$
+language plpgsql;
+
+select buscaCandidatos2('TUBARÃO', 'Prefeito');
