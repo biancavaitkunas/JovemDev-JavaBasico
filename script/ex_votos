@@ -142,7 +142,7 @@ and cidade.nome = 'TUBARÃO'
 inner join cargo on cargo.id = candidato.cargo and cargo.nome = 'Prefeito';
 
 --22
-select vi.nulos
+select cidade.nome, vi.nulos, vi.cargo
 from voto_invalido vi
 inner join cidade on cidade.id = vi.cidade and cidade.nome = 'TUBARÃO';
 
@@ -152,9 +152,16 @@ from voto_invalido vi
 inner join cidade on cidade.id = vi.cidade
 order by vi.nulos desc;
 
+--24
+select cidade.nome, round(vi.nulos*100/(vi.brancos + vi.nulos+ voto.voto))
+from voto_invalido vi, voto
+inner join cidade on cidade.id = vi.cidade
+order by vi.nulos desc;
+
 --25
-select cidade.nome, candidato.nome, voto.voto
+select cidade.nome, candidato.nome
 from candidato
 inner join cidade on cidade.id = candidato.cidade
 inner join voto on voto.voto = (select max (voto)from voto)
+and voto.voto = (select max(voto) from voto)
 inner join cargo on cargo.id = candidato.cargo and cargo.nome = 'Prefeito';
