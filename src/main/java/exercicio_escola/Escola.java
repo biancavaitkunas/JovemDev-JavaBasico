@@ -30,9 +30,9 @@ public class Escola {
 		return alunos.contains(a);
 	}
 	
-	public boolean existeDisciplina (Disciplina d) {
+	/*public boolean existeDisciplina (Disciplina d) {
 		return disciplinas.contains(d);
-	}
+	}*/
 
 
 }

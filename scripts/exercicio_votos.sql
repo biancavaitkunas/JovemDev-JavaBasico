@@ -133,8 +133,28 @@ group by partido.sigla
 order by votos desc;
 
 --21
-select sum (voto.voto), sum (brancos), sum (nulos)
-from voto, voto_invalido
-inner join cidade on cidade.id = candidato.cidade and cidade.nome = 'TUBARÃO'
+select voto_invalido.brancos + voto_invalido.nulos + voto.voto as registrados
+from voto_invalido, voto
 inner join candidato on candidato.id = voto.candidato
-inner join candidato on candidato.id = vi.candidato;
+inner join cidade on cidade.id = voto_invalido.cidade 
+and cidade.id = candidato.cidade 
+and cidade.nome = 'TUBARÃO'
+inner join cargo on cargo.id = candidato.cargo and cargo.nome = 'Prefeito';
+
+--22
+select vi.nulos
+from voto_invalido vi
+inner join cidade on cidade.id = vi.cidade and cidade.nome = 'TUBARÃO';
+
+--23
+select cidade.nome, vi.nulos
+from voto_invalido vi
+inner join cidade on cidade.id = vi.cidade
+order by vi.nulos desc;
+
+--25
+select cidade.nome, candidato.nome, voto.voto
+from candidato
+inner join cidade on cidade.id = candidato.cidade
+inner join voto on voto.voto = (select max (voto)from voto)
+inner join cargo on cargo.id = candidato.cargo and cargo.nome = 'Prefeito';
